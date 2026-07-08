@@ -340,6 +340,103 @@ const translations = {
   }
 };
 
+
+const navigationTranslations = {
+  fa: {
+    "nav.home": "خانه",
+    "nav.party": "حزب",
+    "nav.news": "اخبار",
+    "nav.join": "همکاری / تماس",
+    "mega.party.title": "حزب و ساختار",
+    "mega.party.body": "معرفی، افراد کلیدی و چهره‌های رسمی را در یک گروه روشن نگه دارید.",
+    "mega.documents.title": "اسناد و راهنماها",
+    "mega.documents.body": "اسناد رسمی، دفترچه‌ها و مسیرهای عملی در یک مرکز قابل اسکن.",
+    "mega.media.title": "رسانه و شبکه‌ها",
+    "mega.media.body": "ویدیو، تلویزیون، گالری و کانال‌های اجتماعی بدون شلوغ کردن هدر.",
+    "mega.news.title": "اخبار و به‌روزرسانی‌ها",
+    "mega.news.body": "مطالب تازه و بیانیه‌ها باید قابل دنبال‌کردن و جدا از محتوای ثابت باشند.",
+    "link.about": "درباره ما",
+    "link.secretaries": "دبیران حزب",
+    "link.spokespeople": "سخنگویان",
+    "link.reza": "شاهزاده رضا پهلوی",
+    "link.emergency": "دفترچه دوران اضطرار",
+    "link.guard": "گارد جاویدان ایران",
+    "link.tv": "تلویزیون شیر و خورشید",
+    "link.gallery": "گالری",
+    "link.videos": "ویدیوها",
+    "link.social": "شبکه‌های اجتماعی",
+    "link.latest": "آخرین پست‌ها",
+    "link.statements": "بیانیه‌ها",
+    "link.reports": "گزارش‌ها",
+    "link.donate": "همیاری مالی",
+    "link.medical": "پزشکی / خدمات درمانی",
+    "footer.sitemapAria": "نقشه کامل سایت"
+  },
+  en: {
+    "nav.home": "Home",
+    "nav.party": "Party",
+    "nav.news": "News",
+    "nav.join": "Join / Contact",
+    "mega.party.title": "Party and structure",
+    "mega.party.body": "Keep the introduction, key people, and official voices in one clear group.",
+    "mega.documents.title": "Documents and guides",
+    "mega.documents.body": "Official documents, booklets, and practical pathways in one scannable center.",
+    "mega.media.title": "Media and channels",
+    "mega.media.body": "Video, TV, gallery, and social channels without crowding the header.",
+    "mega.news.title": "News and updates",
+    "mega.news.body": "Fresh posts and statements should be easy to follow and separate from permanent content.",
+    "link.about": "About us",
+    "link.secretaries": "Party secretaries",
+    "link.spokespeople": "Spokespeople",
+    "link.reza": "Prince Reza Pahlavi",
+    "link.emergency": "Emergency booklet",
+    "link.guard": "Imperial Guard of Iran",
+    "link.tv": "Lion and Sun TV",
+    "link.gallery": "Gallery",
+    "link.videos": "Videos",
+    "link.social": "Social channels",
+    "link.latest": "Latest posts",
+    "link.statements": "Statements",
+    "link.reports": "Reports",
+    "link.donate": "Financial support",
+    "link.medical": "Medical / health services",
+    "footer.sitemapAria": "Full site map"
+  },
+  de: {
+    "nav.home": "Start",
+    "nav.party": "Partei",
+    "nav.news": "Nachrichten",
+    "nav.join": "Mitmachen / Kontakt",
+    "mega.party.title": "Partei und Struktur",
+    "mega.party.body": "Einführung, Schlüsselpersonen und offizielle Stimmen bleiben in einer klaren Gruppe.",
+    "mega.documents.title": "Dokumente und Leitfäden",
+    "mega.documents.body": "Offizielle Dokumente, Hefte und praktische Wege in einem gut erfassbaren Zentrum.",
+    "mega.media.title": "Medien und Kanäle",
+    "mega.media.body": "Video, TV, Galerie und soziale Kanäle, ohne den Header zu überladen.",
+    "mega.news.title": "Nachrichten und Updates",
+    "mega.news.body": "Neue Beiträge und Erklärungen sollten leicht verfolgbar und von festen Inhalten getrennt sein.",
+    "link.about": "Über uns",
+    "link.secretaries": "Parteisekretäre",
+    "link.spokespeople": "Sprecher",
+    "link.reza": "Prinz Reza Pahlavi",
+    "link.emergency": "Notfallheft",
+    "link.guard": "Unsterbliche Garde Iran",
+    "link.tv": "Lion and Sun TV",
+    "link.gallery": "Galerie",
+    "link.videos": "Videos",
+    "link.social": "Soziale Kanäle",
+    "link.latest": "Neueste Beiträge",
+    "link.statements": "Erklärungen",
+    "link.reports": "Berichte",
+    "link.donate": "Finanzielle Unterstützung",
+    "link.medical": "Medizin / Gesundheitsdienste",
+    "footer.sitemapAria": "Vollständige Sitemap"
+  }
+};
+
+Object.keys(navigationTranslations).forEach((language) => {
+  Object.assign(translations[language], navigationTranslations[language]);
+});
 const languageConfig = {
   fa: { htmlLang: "fa-IR", dir: "rtl" },
   en: { htmlLang: "en", dir: "ltr" },
@@ -354,6 +451,7 @@ const navLinks = [...document.querySelectorAll(".site-menu a")];
 const railLinks = [...document.querySelectorAll(".story-rail a")];
 const panels = [...document.querySelectorAll(".story-panel[data-story]")];
 const languageButtons = [...document.querySelectorAll("[data-lang]")];
+const navGroups = [...document.querySelectorAll("[data-menu-group]")];
 const defaultLanguage = "fa";
 
 function clamp(value, min, max) {
@@ -453,6 +551,11 @@ function setActiveScene(panel) {
     link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
   });
 
+  navGroups.forEach((group) => {
+    const hasActiveLink = [...group.querySelectorAll("a")].some((link) => link.getAttribute("href") === `#${id}`);
+    group.classList.toggle("is-active", hasActiveLink);
+  });
+
   railLinks.forEach((link) => {
     link.classList.toggle("is-active", link.dataset.rail === id);
   });
@@ -470,14 +573,51 @@ languageButtons.forEach((button) => {
   });
 });
 
+
+function closeNavGroups(exceptGroup = null) {
+  navGroups.forEach((group) => {
+    if (group === exceptGroup) return;
+    group.classList.remove("is-open");
+    group.querySelector(".nav-group-trigger")?.setAttribute("aria-expanded", "false");
+  });
+}
+
+navGroups.forEach((group) => {
+  const trigger = group.querySelector(".nav-group-trigger");
+  if (!trigger) return;
+
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const willOpen = !group.classList.contains("is-open");
+    closeNavGroups(willOpen ? group : null);
+    group.classList.toggle("is-open", willOpen);
+    trigger.setAttribute("aria-expanded", String(willOpen));
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".site-menu")) {
+    closeNavGroups();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeNavGroups();
+    siteMenu?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  }
+});
 if (menuToggle && siteMenu) {
   menuToggle.addEventListener("click", () => {
     const isOpen = siteMenu.classList.toggle("is-open");
+    if (!isOpen) closeNavGroups();
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   siteMenu.addEventListener("click", (event) => {
     if (event.target instanceof HTMLAnchorElement) {
+      closeNavGroups();
       siteMenu.classList.remove("is-open");
       menuToggle.setAttribute("aria-expanded", "false");
     }

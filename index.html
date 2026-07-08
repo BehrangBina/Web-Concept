@@ -25,14 +25,74 @@
       </a>
 
       <div class="site-menu" id="site-menu">
-        <a href="#about" data-i18n="nav.story">روایت</a>
-        <a href="#documents" data-i18n="nav.documents">اسناد</a>
-        <a href="#timeline" data-i18n="nav.timeline">گاهشمار</a>
-        <a href="#media" data-i18n="nav.media">رسانه</a>
-        <a href="#news" data-i18n="nav.now">اکنون</a>
-        <a class="nav-cta" href="#contact" data-i18n="nav.contact">تماس</a>
-      </div>
+        <a href="#hero" data-i18n="nav.home">خانه</a>
 
+        <div class="nav-group" data-menu-group>
+          <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="mega-party" data-i18n="nav.party">حزب</button>
+          <div class="mega-panel" id="mega-party">
+            <div class="mega-panel-copy">
+              <strong data-i18n="mega.party.title">حزب و ساختار</strong>
+              <p data-i18n="mega.party.body">معرفی، افراد کلیدی و چهره‌های رسمی را در یک گروه روشن نگه دارید.</p>
+            </div>
+            <div class="mega-links">
+              <a href="#about" data-i18n="link.about">درباره ما</a>
+              <a href="#contact" data-i18n="link.secretaries">دبیران حزب</a>
+              <a href="#contact" data-i18n="link.spokespeople">سخنگویان</a>
+              <a href="#timeline" data-i18n="link.reza">شاهزاده رضا پهلوی</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-group" data-menu-group>
+          <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="mega-documents" data-i18n="nav.documents">اسناد</button>
+          <div class="mega-panel" id="mega-documents">
+            <div class="mega-panel-copy">
+              <strong data-i18n="mega.documents.title">اسناد و راهنماها</strong>
+              <p data-i18n="mega.documents.body">اسناد رسمی، دفترچه‌ها و مسیرهای عملی در یک مرکز قابل اسکن.</p>
+            </div>
+            <div class="mega-links">
+              <a href="#documents" data-i18n="doc.1.label">اساسنامه</a>
+              <a href="#documents" data-i18n="doc.3.label">مرامنامه</a>
+              <a href="#documents" data-i18n="doc.2.label">سوگندنامه</a>
+              <a href="#documents" data-i18n="link.emergency">دفترچه دوران اضطرار</a>
+              <a href="#documents" data-i18n="link.guard">گارد جاویدان ایران</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-group" data-menu-group>
+          <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="mega-media" data-i18n="nav.media">رسانه</button>
+          <div class="mega-panel" id="mega-media">
+            <div class="mega-panel-copy">
+              <strong data-i18n="mega.media.title">رسانه و شبکه‌ها</strong>
+              <p data-i18n="mega.media.body">ویدیو، تلویزیون، گالری و کانال‌های اجتماعی بدون شلوغ کردن هدر.</p>
+            </div>
+            <div class="mega-links">
+              <a href="#media" data-i18n="link.tv">تلویزیون شیر و خورشید</a>
+              <a href="#media" data-i18n="link.gallery">گالری</a>
+              <a href="#media" data-i18n="link.videos">ویدیوها</a>
+              <a href="#media" data-i18n="link.social">شبکه‌های اجتماعی</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-group" data-menu-group>
+          <button class="nav-group-trigger" type="button" aria-expanded="false" aria-controls="mega-news" data-i18n="nav.news">اخبار</button>
+          <div class="mega-panel" id="mega-news">
+            <div class="mega-panel-copy">
+              <strong data-i18n="mega.news.title">اخبار و به‌روزرسانی‌ها</strong>
+              <p data-i18n="mega.news.body">مطالب تازه و بیانیه‌ها باید قابل دنبال‌کردن و جدا از محتوای ثابت باشند.</p>
+            </div>
+            <div class="mega-links">
+              <a href="#news" data-i18n="link.latest">آخرین پست‌ها</a>
+              <a href="#news" data-i18n="link.statements">بیانیه‌ها</a>
+              <a href="#news" data-i18n="link.reports">گزارش‌ها</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav-cta" href="#contact" data-i18n="nav.join">همکاری / تماس</a>
+      </div>
       <div class="nav-controls">
         <div class="language-switcher" data-i18n-aria-label="language.aria">
           <button type="button" data-lang="fa" aria-pressed="true">FA</button>
@@ -205,8 +265,40 @@
   </main>
 
   <footer class="footer">
-    <p data-i18n="footer.note">نمونه مفهومی طراحی - ساخته شده برای پیش‌نمایش تجربه کاربری، هویت بصری و روایت اسکرولی.</p>
-    <a href="#hero" data-i18n="footer.top">بازگشت به بالا</a>
+    <div class="footer-intro">
+      <p data-i18n="footer.note">نمونه مفهومی طراحی - ساخته شده برای پیش‌نمایش تجربه کاربری، هویت بصری و روایت اسکرولی.</p>
+      <a href="#hero" data-i18n="footer.top">بازگشت به بالا</a>
+    </div>
+    <nav class="footer-sitemap" data-i18n-aria-label="footer.sitemapAria">
+      <div>
+        <strong data-i18n="nav.party">حزب</strong>
+        <a href="#about" data-i18n="link.about">درباره ما</a>
+        <a href="#contact" data-i18n="link.secretaries">دبیران حزب</a>
+        <a href="#contact" data-i18n="link.spokespeople">سخنگویان</a>
+        <a href="#timeline" data-i18n="link.reza">شاهزاده رضا پهلوی</a>
+      </div>
+      <div>
+        <strong data-i18n="nav.documents">اسناد</strong>
+        <a href="#documents" data-i18n="doc.1.label">اساسنامه</a>
+        <a href="#documents" data-i18n="doc.3.label">مرامنامه</a>
+        <a href="#documents" data-i18n="doc.2.label">سوگندنامه</a>
+        <a href="#documents" data-i18n="link.emergency">دفترچه دوران اضطرار</a>
+      </div>
+      <div>
+        <strong data-i18n="nav.media">رسانه</strong>
+        <a href="#media" data-i18n="link.tv">تلویزیون شیر و خورشید</a>
+        <a href="#media" data-i18n="link.gallery">گالری</a>
+        <a href="#media" data-i18n="link.videos">ویدیوها</a>
+        <a href="#media" data-i18n="link.social">شبکه‌های اجتماعی</a>
+      </div>
+      <div>
+        <strong data-i18n="nav.join">همکاری / تماس</strong>
+        <a href="#documents" data-i18n="doc.4.label">هموندی</a>
+        <a href="#contact" data-i18n="link.donate">همیاری مالی</a>
+        <a href="#contact" data-i18n="link.medical">پزشکی / خدمات درمانی</a>
+        <a href="#contact" data-i18n="nav.contact">تماس</a>
+      </div>
+    </nav>
   </footer>
 
   <script src="src/js/app.js"></script>
